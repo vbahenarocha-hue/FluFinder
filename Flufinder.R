@@ -47,3 +47,34 @@ count_matching_masses(masses_list, sample)
 sample2 <- c(1121.476, 651.255, 340.246)
 
 count_matching_masses(masses_list, sample2)
+
+
+
+split_peptides <- function(peptides) {
+  library(stringr)
+  
+  lapply(peptides, str_split, pattern="")
+  
+}
+
+peptides <- list(A=c("LVK","LHHIIFESMLK","DMQR","R","HR","VW"),
+                 B=c("ADEFQGSMQK","IEACWQSYDVQF"),
+                 C=c("MINEPFSWR","LEFHLSER","K","YDEIM"))
+
+
+ggbarplot <- function(peptide_counts_table) {
+  library(ggplot2)
+  
+  # Generating a barplot from the peptide counts dataframe
+  ggplot(peptide_counts_table) +
+aes(rownames(peptide_counts_table), peptide_counts) +
+geom_col(fill="blue", width=0.5) +
+theme_bw() +
+labs(x="Flu Strain", y="Peptide Counts")
+
+}
+
+counts_df <- data.frame(peptide_counts=c(3, 0, 0), rownames=c("A", "B",
+                                                              "C"))
+
+
