@@ -30,14 +30,3 @@ count_matching_masses <- function(protein_masses, sample) {
   return(df)
 }
 
-#Test count_matching_masses() function
-masses_list <- list(A=c(340.246, 1348.728, 530.225), B=c(1121.476, 1469.624), C=c(1160.540, 1011.511, 651.255))
-
-sample <- c(340.246, 530.225, 1348.728)
-
-count_matching_masses(masses_list, sample)
-
-#New sample vector: sample2
-sample2 <- c(1121.476, 651.255, 340.246)
-
-count_matching_masses(masses_list, sample2)
