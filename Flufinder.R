@@ -6,7 +6,7 @@ upload_fasta <- function(fasta_filename) {
              set.attributes = FALSE)
 }
 
-plitpeptides_to_masses <- function(aa) {
+splitpeptides_to_masses <- function(aa) {
   # Generating a vector of masses for each amino acid
   aa_masses <- c(A=71.037, R=156.101, N=114.042, D=115.026, C=103.009,
                  Q=128.058, E=129.042, G=57.021, H=137.058, I=113.084, L=113.084,
